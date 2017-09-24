@@ -1,7 +1,7 @@
 // Copyright 2017 Thomas Gijsbers
 
 #include "TankAIController.h"
-#include "Engine/World.h"
+
 
 void ATankAIController::BeginPlay()
 {

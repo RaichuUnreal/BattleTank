@@ -1,7 +1,7 @@
 // Copyright 2017 Thomas Gijsbers
 
 #include "TankPlayerController.h"
-#include "Engine/World.h"
+
 
 void ATankPlayerController::BeginPlay()
 {
