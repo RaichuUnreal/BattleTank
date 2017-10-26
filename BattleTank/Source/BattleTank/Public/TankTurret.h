@@ -14,17 +14,10 @@ class BATTLETANK_API UTankTurret : public UStaticMeshComponent
 	
 public:
 	// -1 is max left speed, +1 is max right speed
-	void Azimuth(float RelativeSpeed);
-
-private:
-	/// TODO: remove MaxAzimuthDegrees and MinAzimuthDegrees, since the turret can rotate 360 degrees
-	UPROPERTY(EditAnywhere, Category = Setup)
-	float MaxDegreesPerSecond = 20;
-
-	UPROPERTY(EditAnywhere, Category = Setup)
-	float MaxAzimuthDegrees = 360;
-
-	UPROPERTY(EditAnywhere, Category = Setup)
-	float MinAzimuthDegrees = 0;
+	void Rotate(float RelativeSpeed);
 	
+private:
+	UPROPERTY(EditAnywhere, Category = Setup)
+	float MaxDegreesPerSecond = 25;
+
 };

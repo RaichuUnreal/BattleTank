@@ -2,16 +2,13 @@
 
 #include "TankTurret.h"
 
-void UTankTurret::Azimuth(float RelativeSpeed)
+void UTankTurret::Rotate(float RelativeSpeed)
 {
-	// Move the turret the right amount this frame
-	// Given a max azimuth speed, and the frame time
 	RelativeSpeed = FMath::Clamp<float>(RelativeSpeed, -1, 1);
-	auto AzimuthChange = RelativeSpeed * MaxDegreesPerSecond * GetWorld()->DeltaTimeSeconds;
-	auto RawNewAzimuth = RelativeRotation.Yaw + AzimuthChange;
-	auto Azimuth = RawNewAzimuth; // auto Azimuth = FMath::Clamp<float>(RawNewAzimuth, MinAzimuthDegrees, MaxAzimuthDegrees);
+	auto RotationChange = RelativeSpeed * MaxDegreesPerSecond * GetWorld()->DeltaTimeSeconds;
+	auto Rotation = RelativeRotation.Yaw + RotationChange;
 
-	SetRelativeRotation(FRotator(0, Azimuth, 0));
+	SetRelativeRotation(FRotator(0, Rotation, 0));
 }
 
 
