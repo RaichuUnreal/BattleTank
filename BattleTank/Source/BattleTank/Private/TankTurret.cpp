@@ -8,10 +8,10 @@ void UTankTurret::Azimuth(float RelativeSpeed)
 	// Given a max azimuth speed, and the frame time
 	RelativeSpeed = FMath::Clamp<float>(RelativeSpeed, -1, 1);
 	auto AzimuthChange = RelativeSpeed * MaxDegreesPerSecond * GetWorld()->DeltaTimeSeconds;
-	auto RawNewAzimuth = RelativeRotation.Pitch + AzimuthChange;
-	auto Azimuth = FMath::Clamp<float>(RawNewAzimuth, MinAzimuthDegrees, MaxAzimuthDegrees);
+	auto RawNewAzimuth = RelativeRotation.Yaw + AzimuthChange;
+	auto Azimuth = RawNewAzimuth; // auto Azimuth = FMath::Clamp<float>(RawNewAzimuth, MinAzimuthDegrees, MaxAzimuthDegrees);
 
-	SetRelativeRotation(FRotator(0, 0, Azimuth));
+	SetRelativeRotation(FRotator(0, Azimuth, 0));
 }
 
 

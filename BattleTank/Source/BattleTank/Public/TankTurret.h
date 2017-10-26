@@ -17,11 +17,12 @@ public:
 	void Azimuth(float RelativeSpeed);
 
 private:
+	/// TODO: remove MaxAzimuthDegrees and MinAzimuthDegrees, since the turret can rotate 360 degrees
 	UPROPERTY(EditAnywhere, Category = Setup)
-	float MaxDegreesPerSecond = 5;
+	float MaxDegreesPerSecond = 20;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
-	float MaxAzimuthDegrees = 40;
+	float MaxAzimuthDegrees = 360;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
 	float MinAzimuthDegrees = 0;
